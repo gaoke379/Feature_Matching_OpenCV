@@ -16,9 +16,9 @@ int main(int argc, char** argv)
     std::string img1_path, img2_path;
     std::string detector_type, descriptor_type, matcher_type;
     if (argc != 6) {
-        img1_path = "/home/kegao/Files/Dropbox/Research/Feature_Matching/Presentation/Figures/RenderingData_AgiSoft_ABQ215/Data0_000170_crop.png";
-        img2_path = "/home/kegao/Files/Dropbox/Research/Feature_Matching/Presentation/Figures/RenderingData_AgiSoft_ABQ215/Data0_000170_crop.png";
-        detector_type = "SURF"; // FAST, ORB, SIFT, SURF, BRISK
+        img1_path = "../../data/img1.pgm";
+        img2_path = "../../data/img2.pgm";
+        detector_type = "SIFT"; // FAST, ORB, SIFT, SURF, BRISK
         descriptor_type = "SIFT"; // ORB, SIFT, SURF, BRISK
         matcher_type = "DistRatio"; // DistRatio, NN
     }
@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     ///
     int thresh_fast = 69; // FAST feature detection threshold
     int num_ft_orb = 300; // number of ORB features
-    double num_ft_sift = 300; // number of SIFT features
+    double num_ft_sift = 200; // number of SIFT features
     int min_hess_surf = 670; // SURF feature detection threshold
     int thresh_brisk = 98;  // BRISK detection threshold score
     const float ratio_match = 0.8; // threshold ratio between best and second-best match; SIFT: 0.8; SURF: 0.7
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
     if (!img1.data || !img2.data ) { // check whether the image is loaded or not
         std::cout << "Error : Images cannot be loaded..!!" << std::endl;
         return EXIT_FAILURE;
-    }  
+    }
     //-- convert to grayscale image if RGB
     if (img1.channels() == 3) {
         cv::cvtColor(img1, img1_gray, CV_BGR2GRAY);
@@ -191,10 +191,7 @@ int main(int argc, char** argv)
             cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
     std::string saveName = "matches.png";
     cv::imwrite(saveName, img_matches);
-    
+
 
     return EXIT_SUCCESS;
 }
-
-
-
