@@ -28,5 +28,9 @@ $ make
 
 ### Running the code     
 To run the feature matching code, go to `bin/linux` directory and invoke `./FeatureMatch <image1_path> <image2_path> <feature_name> <matcher_type>`      
-Example usage: `./FeatureMatch ../../data/img1.ppm ../../data/img2.ppm SIFT DistRatio`  
+Example usage: `./FeatureMatch ../../data/img1.ppm ../../data/img4.ppm SIFT DistRatio`  
 
+
+### Releases and Changes  
+- **(Branch) master**: feature detection and matching code for OpenCV version 3 & 4.   
+- **(Branch) opencv2**: includes code changes according to the OpenCV version 2.x.x.
