@@ -33,4 +33,4 @@ Example usage: `./FeatureMatch ../../data/img1.ppm ../../data/img4.ppm SIFT Dist
 
 ### Releases and Changes  
 - **(Branch) master**: feature detection and matching code for OpenCV version 3 & 4.   
-- **(Branch) opencv2**: includes code changes according to the OpenCV version 2.x.x.
+- **(Branch) opencv2**: includes code changes for OpenCV version 2.x.x.
